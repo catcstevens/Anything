@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  from: 2020-03-02
+  to: 2020-03-02
+  price: 1
+  depost: 1
+  delivery: MyText
+  condition: 1
+  rental_period: 1
+
+two:
+  title: MyString
+  description: MyText
+  from: 2020-03-02
+  to: 2020-03-02
+  price: 1
+  depost: 1
+  delivery: MyText
+  condition: 1
+  rental_period: 1
