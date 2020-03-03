@@ -1,7 +1,7 @@
 <h1>If you can read this you are looking at a listing</h1>
 
 <h1><%= @listing.title %></h1>
-
+<%= image_tag @listing.picture if @listing.picture.attached? %>
 <p>Description: <%= @listing.description %></p> 
 <p>Conditon: <%= @listing.condition %></p>
 <p>From: <%= @listing.from %></p>

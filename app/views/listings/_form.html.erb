@@ -31,7 +31,10 @@
         <%= form.label :rental_period %>
         <%= form.number_field :rental_period %>
     </div>
-    <% @condition.each do |option| %>
+    <div>
+         <%= form.label :picture %> <%= form.file_field :picture, accept:
+        'image/png,image/gif,image/jpeg,image/jpg' %>
+        <% @condition.each do |option| %>
     <div>
         <%= form.radio_button :condition, option %>
         <%= form.label "condition_#{option}", option %>

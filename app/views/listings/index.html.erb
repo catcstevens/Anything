@@ -1,7 +1,7 @@
 <h1>Things to Borrow from your Neighbour</h1>
 
 <% @listings.each do |listing| %>
-    
+    <%= image_tag listing.picture if listing.picture.attached? %>
     <p><%= listing.title %></p>
     <p><%= listing.description %></p>
     <p><%= listing.condition %></p>
