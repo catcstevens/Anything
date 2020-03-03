@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_listing, only: [:show, :edit, :update, :destroy]
     before_action :set_condition, only: [:new, :edit, :create]
+    before_action :set_user_listing, only: [:edit, :update, :destroy]
         def index
             @listings = Listing.all
         end
@@ -54,6 +55,15 @@ class ListingsController < ApplicationController
 
         def set_condition
             @condition = Listing.conditions.keys
+        end
+
+        def set_user_listing
+            id = params[:id]
+            @listing = current_user.listings.find_by_id(id)
+        
+            if @listing == nil
+                redirect_to listings_path
+            end
         end
     
         def listing_params
