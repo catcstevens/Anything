@@ -15,7 +15,7 @@ class ListingsController < ApplicationController
         end
     
         def create
-            @listing = Listing.create(listing_params)
+            @listing = current_user.Listing.create(listing_params)
                 
             if @listing.errors.any?
                 render "new"
