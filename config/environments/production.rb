@@ -1,3 +1,5 @@
+# Geolocation in sign-up
+require 'ipinfo-rails'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -94,4 +96,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # geolocation for sign-in credentials
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.middle.use(IPinfoMiddleware, {
+    token: Rails.application.credentials.dig(:ipinfo_token)
+  })
 end
