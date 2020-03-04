@@ -1,19 +1,17 @@
 @import "bootstrap";
-
-
-     
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Spartan&display=swap');
 
 body {
-    background-color: #FDFFFC;
+    background-color: #FAF3DD !important;
     color: #235789 !important;
 }
 
 .navbar-brand {
-    font-family: 'Monoton', cursive;
+    font-family: 'Spartan', arial;
     font-size: 3rem;
 }
 .navbar {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     background-color: #92DCE5 !important;
 }
 
@@ -27,5 +25,5 @@ section {
 }
 
 .title {
-    font-family: 'Monoton', cursive;
+    font-family: 'Lobster&family', arial;
 }
