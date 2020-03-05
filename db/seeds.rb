@@ -8,6 +8,6 @@
 categories = ["DIY", "camping", "kids", "hobbies", "gardening", "cooking", "furniture", "instruments"]
 
 for i in categories
-    Categories.create(name: i)
+    Category.create(name: i)
     puts "created #{i} categories"
 end
