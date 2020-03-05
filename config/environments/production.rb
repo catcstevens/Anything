@@ -96,7 +96,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.hosts << "https://thankyouneighbour.herokuapp.com/"
+  # config.hosts << "https://thankyouneighbour.herokuapp.com/"
   # geolocation for sign-in credentials
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.middleware.use(IPinfoMiddleware, {
