@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 # routes main page to home
   get "/", to: "pages#home", as: "root"
-
+  
   get "/listings", to: "listings#index", as: "listings"
   post "/listings", to: "listings#create"
   get "/listings/new", to: "listings#new", as: "new_listing"
+  post "/listings/new", to: "listings#new"
   get "/listings/:id", to: "listings#show", as: "listing"
   put "/listings/:id", to: "listings#update"
   patch "/listings/:id", to: "listings#update"

@@ -11,3 +11,12 @@ for i in categories
     Category.create(name: i)
     puts "created #{i} categories"
 end
+
+for i in 1..5
+    User.create(
+        username: "username#{i}",
+        email: "#{i}@test.com",
+        password: "123456"
+    )
+    puts "created #{i} users"
+end

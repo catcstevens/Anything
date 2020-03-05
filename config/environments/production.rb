@@ -98,8 +98,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   # config.hosts << "https://thankyouneighbour.herokuapp.com/"
   # geolocation for sign-in credentials
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.middleware.use(IPinfoMiddleware, {
-    token: Rails.application.credentials.dig(:ipinfo_token)
-  })
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # config.middleware.use(IPinfoMiddleware, {
+  #   token: Rails.application.credentials.dig(:ipinfo_token)
+  # })
 end
