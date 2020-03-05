@@ -3,5 +3,6 @@ class Listing < ApplicationRecord
   validates :title,:description, :condition, :price, :deposit, :from, :to, :delivery, :rental_period, presence: true
   has_one_attached :picture
   belongs_to :user
+  belongs_to :category
     
 end

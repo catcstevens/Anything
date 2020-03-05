@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_listing, only: [:show, :edit, :update, :destroy]
-    before_action :set_condition, only: [:new, :edit, :create]
+    before_action :set_category_and_condition, only: [:new, :edit, :create]
     before_action :set_user_listing, only: [:edit, :update, :destroy]
         def index
             @listings = Listing.all
@@ -53,7 +53,8 @@ class ListingsController < ApplicationController
             @listing = Listing.find(id)
         end
 
-        def set_condition
+        def set_category_and_condition
+            @category = Category.all
             @condition = Listing.conditions.keys
         end
 
@@ -67,7 +68,7 @@ class ListingsController < ApplicationController
         end
     
         def listing_params
-            params.require(:listing).permit(:title, :description, :condition, :price, :deposit, :from, :to, :delivery, :rental_period, :picture)
+            params.require(:listing).permit(:title, :description, :category, :condition, :price, :deposit, :from, :to, :delivery, :rental_period, :picture)
         end
     
     end

@@ -3,6 +3,12 @@
         <%= form.label :title %>
         <%= form.text_field :title %>
     </div>
+
+    <div>
+    <%= form.label :category_id %>
+    <%= form.select(:category_id, @category.map{|b| [b.name, b.id]}) %>
+    </div>
+
     <div>
         <%= form.label :description %>
         <%= form.text_area :description %>

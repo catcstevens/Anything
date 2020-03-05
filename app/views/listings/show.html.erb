@@ -2,6 +2,7 @@
 
 <h1><%= @listing.title %></h1>
 <%= image_tag @listing.picture if @listing.picture.attached? %>
+<p>Category: <%= @listing.category.name %></p>
 <p>Description: <%= @listing.description %></p> 
 <p>Conditon: <%= @listing.condition %></p>
 <p>From: <%= @listing.from %></p>

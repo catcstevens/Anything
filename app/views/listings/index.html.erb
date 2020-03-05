@@ -3,6 +3,7 @@
 <% @listings.each do |listing| %>
     <%= image_tag listing.picture if listing.picture.attached? %>
     <p><%= listing.title %></p>
+    <p><%= listing.category.name %></p>
     <p><%= listing.description %></p>
     <p><%= listing.condition %></p>
     <p><%= listing.from %></p>

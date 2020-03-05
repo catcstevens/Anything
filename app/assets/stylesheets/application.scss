@@ -3,17 +3,24 @@
 
 body {
     background-color: #FAF3DD !important;
-    color: #235789 !important;
+    color: #2F3061;
 }
 
 .navbar-brand {
-    font-family: 'Spartan', arial;
-    font-size: 3rem;
+    width: 30px;
 }
 .navbar {
     margin-bottom: 30px;
     background-color: #92DCE5 !important;
 }
+    
+    .btn-custom {
+        border-radius: 0;
+        outline-color: #F52F57 !important;
+        background-color: none;
+        color: #F52F57;
+}
+
 
 .navbar-left {
     padding-right: 1.5rem;
@@ -26,4 +33,12 @@ section {
 
 .title {
     font-family: 'Lobster&family', arial;
+}
+
+
+    
+
+.logo {
+    width: 60px;
+    height: 60px;
 }

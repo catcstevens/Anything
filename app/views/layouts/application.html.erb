@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 <html>
   <head>
   
-    <title>Anything</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Latest compiled and minified CSS -->
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
-
-   
-  <div class=”container">
-  <body>
-  <nav class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container-fluid">
-      <div class="logo">
-<%= image_tag "Thank You Neighbour.png", alt: "Thank you neighbour" %>
+  <nav class="navbar navbar-expand navbar-light bg-light flex-column">
+  <div class="navbar-header">
+  <a class="navbar-brand" href="#"><%= image_tag "logo.png", alt: "Thank you neighbour" %></a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="listings_index">Borrow Me</a></li>
-      <li><a href="/listings_new">Create Lis</a></li>
-      <li><a href="#">Page 3</a></li>
-    
-  <% if user_signed_in? %>
-    <%= link_to "logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "login", new_user_session_path %>
-  <% end %>
+        
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar">
+        <div class="btn-group-justified">
+        <button type="button" class="btn btn-custom"><a href="#">Home</a></button>
+        <button type="button" class="btn btn-custom"><a href="/">Borrow Me</a></button>
+        <button type="button" class="btn btn-custom"><a href="/listings/new">Create List</a></button>
+          <% if user_signed_in? %>
+            <button type="button" class="btn btn-default"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
+            <% else %>
+           <button type="button" class="btn btn-default"><%= link_to "login", new_user_session_path %></button>
+           
+           <% end %>
+           <p class="notice"><%= notice %></p>
+           <p class="alert"><%= alert %></p>
+    </div>
+    </div>
+</nav>
+  <body>
+  
+  
+
+  
   </ul>
   </div>
-</nav>
+  </nav>
     <%= yield %>
   </body>
-  </div>
+ 
 </html>
