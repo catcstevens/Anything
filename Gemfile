@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-
+gem 'listen', '>= 3.0.5', '< 3.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use postgresql as the database for Active Record
@@ -67,7 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "aws-sdk-s3", "~> 1.60"
 
 gem "devise", "~> 4.7"
-gem 'listen', '>= 3.0.5', '< 3.2'
+
 gem 'ipinfo-rails'
 
 
