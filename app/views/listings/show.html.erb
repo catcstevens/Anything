@@ -9,3 +9,22 @@
 <p>To: <%= @listing.to %></p>
 <p>Delivery: <%= @listing.delivery %></p>
 <p>Min_rental: <%= @listing.rental_period %></p>
+<button data-stripe="payment">
+  Pay Deposit <%= number_to_currency(@listing.deposit) %>
+</button>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  document
+    .querySelector("[data-stripe='payment']")
+    .addEventListener("click", () => {
+      const stripe = Stripe(
+        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+      );
+
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session_id %>"
+      });
+    });
+</script>

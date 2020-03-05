@@ -70,3 +70,5 @@ gem "devise", "~> 4.7"
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'ipinfo-rails'
 
+
+gem "stripe", "~> 5.17"
