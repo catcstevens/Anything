@@ -1,1 +1,2 @@
-Stripe.api_key = Rails.application.credentials.dig(:stripe, :sk_live_VGAcet5AQwuwCuoPXVOyHMe)
+Stripe.api_key = Rails.application.credentials.dig(:stripe, :secret_key
+)
