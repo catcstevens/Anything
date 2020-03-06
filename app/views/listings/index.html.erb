@@ -2,18 +2,18 @@
 
 <% @listings.each do |listing| %>
     <%= image_tag listing.picture if listing.picture.attached? %>
-    <p><%= listing.title %></p>
-    <p><%= listing.category.name %></p>
-    <p><%= listing.description %></p>
-    <p><%= listing.condition %></p>
-    <p><%= listing.from %></p>
-    <p><%= listing.to %></p>
-    <p><%= listing.delivery %></p>
-    <p><%= listing.rental_period %></p>
-    <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user.id %> %>
-    <%= link_to "show", listing_path(listing.id) %>
+    <p>What I'm renting: <%= listing.title %></p>
+    <p>For people casually doing: <%= listing.category.name %></p>
+    <p>A bit about my thing: <%= listing.description %></p>
+    <p>Condition: <%= listing.condition %></p>
+    <p>Date it's available: <%= listing.from %></p>
+    <p>To: <%= listing.to %></p>
+    <p>How can you get it? <%= listing.delivery %></p>
+    <p>Minimum rental <%= listing.rental_period %></p>
+    <p>Daily fee: $<%= listing.price %></p>
+    <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user.id %>
+    <button type="button" class="btn btn-custom"><%= link_to "View #{listing.title}", listing_path(listing.id) %></button>
     <%= link_to "delete", listing_path(listing),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
-    <%= link_to "view", listing_path(listing) %>
 <% end %>
