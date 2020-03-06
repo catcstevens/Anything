@@ -6,7 +6,7 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.date :from
       t.date :to
       t.integer :price
-      t.integer :depost
+      t.integer :deposit
       t.text :delivery
       t.integer :condition
       t.integer :rental_period
