@@ -25,6 +25,7 @@
         <button type="button" class="btn btn-custom"><a href="#">Home</a></button>
         <button type="button" class="btn btn-custom"><a href="/listings/#">Borrow Me</a></button>
         <button type="button" class="btn btn-custom"><a href="/listings/new">Create List</a></button>
+        <button type="button" class="btn btn-custom"><%= link_to "My profile", user_path(current_user) %></button>
           <% if user_signed_in? %>
             <button type="button" class="btn btn-default"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
             <% else %>
@@ -38,8 +39,6 @@
     </div>
 </nav>
  
-  
-
   <body>
 
   <div class="container">

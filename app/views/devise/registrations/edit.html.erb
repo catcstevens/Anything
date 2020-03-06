@@ -4,6 +4,16 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+  <%= f.label :first_name %><br />
+  <%= f.text_field :first_name, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name, autofocus: true %>
+</div>
+  
+  <div class="field">
   <%= f.label :username %><br />
   <%= f.text_field :username, autofocus: true %>
 </div>
@@ -14,9 +24,19 @@
   </div>
 
   <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location, autofocus: true, value: city %>
-  </div>
+  <%= f.label :about %><br />
+  <%= f.text_field :about, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= f.label :location %><br />
+  <%= f.text_field :location, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= f.label :delivers %><br />
+  <%= f.text_field :delivers, autofocus: true %>
+</div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
