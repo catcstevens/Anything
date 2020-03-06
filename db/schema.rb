@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 2020_03_04_225740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "categories_id"
-    t.index ["categories_id"], name: "index_listings_on_categories_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
@@ -75,6 +75,6 @@ ActiveRecord::Schema.define(version: 2020_03_04_225740) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "listings", "categories", column: "categories_id"
+  add_foreign_key "listings", "categories"
   add_foreign_key "listings", "users"
 end

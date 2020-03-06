@@ -33,11 +33,13 @@ class ListingsController < ApplicationController
     
         def new
             @listing = Listing.new
+            @user_id = current_user.id
+            puts "USER #{@user_id}"
         end
     
         def create
-            @listing = current_user.Listing.create(listing_params)
-                
+            @listing = Listing.create(listing_params)
+            puts "errors 111111 #{@listing.errors.inspect}"
             if @listing.errors.any?
                 render "new"
             else
@@ -88,7 +90,7 @@ class ListingsController < ApplicationController
         end
     
         def listing_params
-            params.require(:listing).permit(:title, :description, :category, :condition, :price, :deposit, :from, :to, :delivery, :rental_period, :picture)
+            params.require(:listing).permit(:title, :description, :category_id, :condition, :price, :deposit, :from, :to, :delivery, :rental_period, :picture, :user_id)
         end
     
     end
