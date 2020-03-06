@@ -23,7 +23,7 @@
         <div class="navbar">
         <div class="btn-group-justified">
         <button type="button" class="btn btn-custom"><a href="#">Home</a></button>
-        <button type="button" class="btn btn-custom"><a href="/">Borrow Me</a></button>
+        <button type="button" class="btn btn-custom"><a href="/listings/#">Borrow Me</a></button>
         <button type="button" class="btn btn-custom"><a href="/listings/new">Create List</a></button>
           <% if user_signed_in? %>
             <button type="button" class="btn btn-default"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
