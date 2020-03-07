@@ -63,9 +63,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+# external imag storage
 gem "aws-sdk-s3", "~> 1.60"
-
+#Easy sign-in and email/password verifier
 gem "devise", "~> 4.7"
-
+#payment processor
 gem "stripe", "~> 5.17"
+# calendar for showing availability
+gem 'simple_calendar', '~> 2.3'
+gem 'trix', '~> 0.9.9'
