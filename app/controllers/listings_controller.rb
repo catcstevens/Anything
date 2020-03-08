@@ -5,6 +5,8 @@ class ListingsController < ApplicationController
     before_action :set_user_listing, only: [:edit, :update, :destroy]
         def index
             @listings = Listing.all
+            @search = Listing.search(params[:q])
+            @listings = @search.result
         end
     
         def show

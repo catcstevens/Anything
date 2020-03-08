@@ -72,3 +72,5 @@ gem "stripe", "~> 5.17"
 # calendar for showing availability
 gem 'simple_calendar', '~> 2.3'
 gem 'trix', '~> 0.9.9'
+#search function
+gem 'ransack'
