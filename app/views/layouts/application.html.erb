@@ -11,7 +11,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  </head>
+  
+    </head>
   
   <nav class="navbar navbar-expand navbar-light bg-light flex-column">
   <div class="navbar-header">
@@ -22,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar">
         <div class="btn-group-justified">
-        <button type="button" class="btn btn-custom"><a href="#">Home</a></button>
+        <button type="button" class="btn btn-custom"><a href="/">Home</a></button>
         <button type="button" class="btn btn-custom"><a href="/listings/#">Borrow Me</a></button>
         <button type="button" class="btn btn-custom"><a href="/listings/new">Create List</a></button>
        
@@ -31,20 +32,22 @@
             <button type="button" class="btn btn-custom"><%= link_to "My profile", user_path(current_user) %></button > 
             <% else %>
            <button type="button" class="btn btn-default"><%= link_to "login", new_user_session_path %></button>
-           
+           <%= render "search_box" %>
            <% end %>
-           <p class="notice"><%= notice %></p>
-           <p class="alert"><%= alert %></p>
+         
+          
+           
     </div>
     </div>
     </div>
 </nav>
  
   <body>
-
+  
   <div class="container">
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+  
+  <%= yield %>
+ 
     
   </div>
 </body>
