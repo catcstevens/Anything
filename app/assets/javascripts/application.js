@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery-ui/widgets/datepicker
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs

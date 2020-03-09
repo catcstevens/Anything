@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post 'listings/:id/users/show', to: 'users#show'
   devise_for :users
   resources :users
+  resources :calendars
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 # routes main page to home
   get "/", to: "pages#home", as: "root"

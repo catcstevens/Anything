@@ -1,4 +1,22 @@
+/*
+*= require_tree .
+*= require_self
+*= require jquery-ui/datepicker
+*/
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+
+.btn-custom {
+    border-radius: 0;
+    outline-color: #F52F57 !important;
+    background-color: none;
+    color: #F52F57;
+}
+
+@import "main";
+
 @import "bootstrap";
+
+
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Spartan&display=swap');
 
 body {
@@ -14,13 +32,7 @@ body {
     background-color: #92DCE5 !important;
 }
     
-    .btn-custom {
-        border-radius: 0;
-        outline-color: #F52F57 !important;
-        background-color: none;
-        color: #F52F57;
-}
-
+    
 
 .navbar-left {
     padding-right: 1.5rem;
