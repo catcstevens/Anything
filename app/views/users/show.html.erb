@@ -9,4 +9,7 @@
 <% @user_listings.each do |listing| %>
 <%= image_tag listing.picture if listing.picture.attached? %>
 <%= link_to listing.title, listings_path(listing) %>
+
+<button type="button" class="btn btn-custom"><%= link_to "Edit profile", edit_user_registration_path if current_user.id == listing.user.id %></button >
+
     <% end %>

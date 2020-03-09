@@ -1,13 +1,6 @@
 <h1>Things to Borrow from your Neighbour</h1>
 
-<%= search_form_for @search do |f| %>
-    <div class="field">
-        <%= f.label :title_cont, "What are you looking for?" %>
-        <%= f.text_field :title_cont %>
-    </div>
-    <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
-
+<%= render "layouts/search_box" %>
 <% @listings.each do |listing| %>
     <%= image_tag listing.picture if listing.picture.attached? %>
     <p>What I'm renting: <%= listing.title %></p>

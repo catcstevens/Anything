@@ -11,7 +11,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+    <%= yield(:search) %>
     </head>
   
   <nav class="navbar navbar-expand navbar-light bg-light flex-column">
@@ -34,9 +34,8 @@
            <button type="button" class="btn btn-default"><%= link_to "login", new_user_session_path %></button>
            <%= render "search_box" %>
            <% end %>
-         
           
-           
+            
     </div>
     </div>
     </div>

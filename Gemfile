@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
@@ -69,8 +70,5 @@ gem "aws-sdk-s3", "~> 1.60"
 gem "devise", "~> 4.7"
 #payment processor
 gem "stripe", "~> 5.17"
-# calendar for showing availability
-gem 'simple_calendar', '~> 2.3'
-gem 'trix', '~> 0.9.9'
 #search function
 gem 'ransack'
