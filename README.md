@@ -86,11 +86,36 @@ Ransack is another gem that allows the app to have a search function searching t
 
 17. Describe your projects *models* in terms of the relationships (active record associations) they have with each other
 
+This app has Class methods that connect the models with each other. The models have relationships involving the primary key of the model with the foreign key of another model.
+
+The models in the app are:
+
+ - Application_record - This is in every Rails app and inherits from ActiveRecord::Base
+
+ All other models inherit from ApplicationRecord. They are:
+
+ - Category: has many listings.
+ This means that each category can be found in many listings. Category is a foreign key on the listings table.
+ - Conversation: belongs to author, belongs to receiver (both as Class name User). It has many personal messages. It also gives scope to the users and receivers in the conversation.
+ This is a complex scenario but essentially the conversation model belongs to the User and has a two foreign keys in the user table, both as author and receiver. 
+ - Listing: Belongs to User, belongs to category and has one attached picture. Listing is a foreign key in the User and Category models. It also has one picture attached from a table external to the database (AWS), so picture has no model in the app.
+ - Personal_message: Belongs to conversation and User. Has a foreign key in the Converstion and User models. 
+ - User: Has many listings - each user can make many listings in the User model. It has many authored and receiced conversations and many personal messagess. The messages are dependent on the User. If the User no longer exists in the model the personal messages will be destroyed. 
+
+ Application-record inherits from ActiveRecord: :Base
 
 
 18. Discuss the database relations to be implemented in your application
 
+The database is closely related to the models in the application. Most tables have a model that informs their relationships. 
+
+The Listing table belongs to the user table because a user must sign up (creating an entry on the user table) in order to create a listing. The user owns that listing and if they delete themselves from the app the listing will no longer exist. The listing also contains a foregin key from the categories table. This is a simple table that has many categories. Each listing calls on this key to refer to one of those categories. There is also an external picture storage that is referenced in the listing, which is external to the database.
+
+The User table stores information relating to each user. Some of this information is used to display information about the 'neighbour', and the email and password is used to log the user in and validate their identity. The email and name are also used in conjunction with the conversation and personal_message tables to communicate between two users. Therefore the User table is connected to the listing, the conversation, the personal_message table.
+
 19. Provide your database schema design
+
+https://www.lucidchart.com/documents/edit/1a35fd1a-ba46-4651-bdfa-0bc4678544c8/0_0?beaconFlowId=7B4E477B4B4353E2
 
 20. Describe the way tasks are allocated and tracked in your project
 
