@@ -6,9 +6,23 @@ class ListingsController < ApplicationController
         def index
             @search = Listing.search(params[:q])
             @listings = @search.result
+            
         end
     
         def show
+            @listing_owner = @listing.user
+
+            if current_user
+                borrower_id = current_user.id
+                user_email = current_user.email
+
+            else
+                borrower_id = nil
+                user_email = nil
+
+            end
+
+
                 session = Stripe::Checkout::Session.create(
                     payment_method_types: ['card'],
                     customer_email: current_user.email,

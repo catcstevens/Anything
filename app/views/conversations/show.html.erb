@@ -1,7 +1,8 @@
-<h1>Chatting with <%= @conversation.with(current_user).name %></h1>
+# <h1>Chatting with <%= @conversation.with(current_user).name %></h1>
 
 <div id="conversation-main">
   <div id="conversation-body">
+  <%= render partial: "conversations/conversation" %>
     <%= render @conversation.personal_messages %>
   </div>
 

@@ -4,29 +4,27 @@
 *= require jquery-ui/datepicker
 */
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-
+// $red:  #F52F57; 
+// $blue: #2F3061
 .btn-custom {
     border-radius: 0;
     outline-color: #F52F57 !important;
     background-color: none;
-    color: #F52F57;
+    color: #F52F57 !important,
 }
 
-@import "main";
-
-@import "bootstrap";
-
-
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Spartan&display=swap');
+@import "bootstrap";
 
 body {
     background-color: #FAF3DD !important;
     color: #2F3061;
 }
-
-.navbar-brand {
-    width: 30px;
+.navbar-brand img
+{
+    max-height: 150px !important;
 }
+
 .navbar {
     margin-bottom: 30px;
     background-color: #92DCE5 !important;
@@ -53,4 +51,15 @@ section {
 .logo {
     width: 60px;
     height: 60px;
+}
+
+.container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: #2F3061;
 }

@@ -29,3 +29,4 @@
     });
 </script>
 
+<button type="button" class="btn btn-custom"><%= link_to 'Message Neighbour', conversations_path(sender_id: current_user.id, receiver_id: @listing_owner.id) %></button >

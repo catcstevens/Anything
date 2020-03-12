@@ -12,40 +12,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="UTF-8"> <meta name=viewport content="width=device-width, initial-scale=1">
     <%= yield(:search) %>
-    </head>
   
-  <nav class="navbar navbar-expand navbar-light bg-light flex-column">
-  <div class="navbar-header">
-  <a class="navbar-brand" href="#"><%= image_tag "logo.png", alt: "Thank you neighbour" %></a>
-    </div>
-        
   
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="navbar">
-        <div class="btn-group-justified">
-        <button type="button" class="btn btn-custom"><a href="/">Home</a></button>
-        <button type="button" class="btn btn-custom"><a href="/listings/#">Borrow Me</a></button>
-        <button type="button" class="btn btn-custom"><a href="/listings/new">Create List</a></button>
-        <%= render partial: "devise/shared/menu" %> 
-          <% if user_signed_in? %>
-            <button type="button" class="btn btn-default"><%= link_to "logout", destroy_user_session_path, method: :delete %></button>
-            <button type="button" class="btn btn-custom"><%= link_to "My profile", user_path(current_user) %></button > 
-            <% else %>
-           <button type="button" class="btn btn-default"><%= link_to "login", new_user_session_path %></button>
-        
-           <% end %>
-          
-            
-    </div>
-    </div>
-    </div>
-</nav>
- 
   <body>
- 
+  <header>
+  <%= render 'layouts/navheader' %>
+  </header>
 
-  <div class="container">
- 
+  
+
   
   <%= yield %>
  
@@ -54,8 +29,6 @@
 </body>
   
   
- 
-
 
  
 </html>

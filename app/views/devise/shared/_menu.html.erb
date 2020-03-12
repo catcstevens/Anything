@@ -5,9 +5,8 @@
   <% end %>
   
   <% if user_signed_in? %>
-    <p>Signed in as <%= current_user.name %> | <%= link_to 'log out', destroy_user_session_path, method: :delete %></p>
+    <h2> Hello <%= current_user.name %> </h2>
   <% end %>
-  <ul>
-  <li><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Users', users_path %></li>
-  </ul>
+
+  
+  <button type="button" class="btn btn-outline-primary"><%= link_to 'Users', users_path %></button>
