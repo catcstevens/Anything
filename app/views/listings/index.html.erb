@@ -32,14 +32,16 @@
                         <p>Minimum rental <%= listing.rental_period %></p>
                         <p>Daily fee: $<%= listing.price %></p>
                             <div>
-                                <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user.id %>
+                                <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user_id %>
                             </div>
                          <button type="button" class="btn btn-outline-primary"><%= link_to "View #{listing.title}", listing_path(listing.id) %></button>
     
                             <div>
+                            <% if current_user.id == listing.user_id %>
                                 <button type="button" class="btn btn-outline-primary"><%= link_to "delete", listing_path(listing),
               method: :delete,
               data: { confirm: "Are you sure?" } %></button>
+              <%end%>
                             </div>
                     </div>
                 </div>

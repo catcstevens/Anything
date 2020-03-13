@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_listing, only: [:show, :edit, :update, :destroy]
+    before_action :set_listing, only: [:show, :destroy]
     before_action :set_category_and_condition, only: [:new, :edit, :create]
     before_action :set_user_listing, only: [:edit, :update, :destroy]
         def index
@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
         end
     
         def show
-            @listing_owner = @listing.user
+            @listing_owner = @listing.user_id
 
             if current_user
                 borrower_id = current_user.id
@@ -53,8 +53,8 @@ class ListingsController < ApplicationController
         end
     
         def create
-            @listing = Listing.create(listing_params)
-            puts "errors 111111 #{@listing.errors.inspect}"
+            @listing = current_user.listings.create(listing_params)
+            
             if @listing.errors.any?
                 render "new"
             else
@@ -68,7 +68,6 @@ class ListingsController < ApplicationController
         end
     
         def update
-            
             
             if @listing.update(listing_params)
                 redirect_to @listing
@@ -105,7 +104,7 @@ class ListingsController < ApplicationController
         end
     
         def listing_params
-            params.require(:listing).permit(:title, :description, :category_id, :condition, :price, :deposit, :from, :to, :delivery, :rental_period, :picture, :user_id)
+            params.require(:listing).permit(:title, :description, :category_id, :condition, :price, :deposit, :from, :to, :delivery, :rental_period, :picture)
         end
     
     end

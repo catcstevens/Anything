@@ -1,6 +1,7 @@
 <h1>If you can read this you are looking at a listing</h1>
 
 <h1><%= @listing.title %></h1>
+<h2> Owned by <%=User.find(@listing.user_id).email %> </h2>
 <%= image_tag @listing.picture if @listing.picture.attached? %>
 <p>Category: <%= @listing.category.name %></p>
 <p>Description: <%= @listing.description %></p> 
@@ -29,4 +30,3 @@
     });
 </script>
 
-<button type="button" class="btn btn-custom"><%= link_to 'Message Neighbour', conversations_path(sender_id: current_user.id, receiver_id: @listing_owner.id) %></button >
