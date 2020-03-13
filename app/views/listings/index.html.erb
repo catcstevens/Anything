@@ -1,39 +1,51 @@
-<div>
-<%= render partial: "devise/shared/menu" %>
-</div>
-<h1>Things to Borrow from your Neighbour</h1>
-<div>
-<%= render "layouts/search_box" %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <%= render partial: "devise/shared/menu" %>
+    </div>
+    <div class="col">
+        <%= render "layouts/search_box" %>
+    </div>
+  </div>
 </div>
 
-<div class="container">
-<% @listings.each do |listing| %>
-    <div class="card" style="width: 18rem;">
-    <% if listing.picture.attached? %>
-        <%= image_tag(listing.picture, class: "card-img-top")  %>
-    <% end %>
-    <div class="card-body">
-    <h5 class="card-title">What I'm renting: <%= listing.title %></h5>
-    <p>For people casually doing: <%= listing.category.name %></p>
-    <p>A bit about my thing: <%= listing.description %></p>
-    <p>Condition: <%= listing.condition %></p>
-    <p>Date it's available: <%= listing.from %></p>
-    <p>To: <%= listing.to %></p>
-    <p>How can you get it? <%= listing.delivery %></p>
-    <p>Minimum rental <%= listing.rental_period %></p>
-    <p>Daily fee: $<%= listing.price %></p>
-    <div>
-    <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user.id %>
-    </div>
-    <button type="button" class="btn btn-outline-primary"><%= link_to "View #{listing.title}", listing_path(listing.id) %></button>
+
+
+
+<div class="container"> 
+<div class="row">
+    <% @listings.each do |listing| %>
+        
+            <div class="col-sm">
+                <div class="card" style="width: 20rem;">
+                    <% if listing.picture.attached? %>
+                    <%= image_tag(listing.picture, class: "card-img-top")  %>
+                    <% end %>
+                    <div class="card-body">
+                        <h5 class="card-title">What I'm renting: <%= listing.title %></h5>
+                        <p>For people casually doing: <%= listing.category.name %></p>
+                        <p>A bit about my thing: <%= listing.description %></p>
+                        <p>Condition: <%= listing.condition %></p>
+                        <p>Date it's available: <%= listing.from %></p>
+                        <p>To: <%= listing.to %></p>
+                        <p>How can you get it? <%= listing.delivery %></p>
+                        <p>Minimum rental <%= listing.rental_period %></p>
+                        <p>Daily fee: $<%= listing.price %></p>
+                            <div>
+                                <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user.id %>
+                            </div>
+                         <button type="button" class="btn btn-outline-primary"><%= link_to "View #{listing.title}", listing_path(listing.id) %></button>
     
-    <div>
-    <button type="button" class="btn btn-outline-primary"><%= link_to "delete", listing_path(listing),
+                            <div>
+                                <button type="button" class="btn btn-outline-primary"><%= link_to "delete", listing_path(listing),
               method: :delete,
-              data: { confirm: "Are you sure?" } %>
-</div>
-</div>
-    <% end %></button>
+              data: { confirm: "Are you sure?" } %></button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        
+    <% end %>
+    </div>
 </div>
        
-</div>

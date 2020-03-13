@@ -1,13 +1,21 @@
 class ConversationsController < ApplicationController
     
-    before_action :set_conversation, except: [:index]
-    before_action :check_participating!, except: [:index]
+    # before_action :set_conversation, except: [:index]
+    # before_action :check_participating!, except: [:index]
+    before_action :find_conversation!, except: [:index]
     def index
       @conversations = Conversation.participating(current_user).order('updated_at DESC')
     end
 
     def show
       @personal_message = PersonalMessage.new
+    end
+
+    def create 
+      unless @conversation 
+        @conversation = Conversation.create(params.permit(:author_id, :receiver_id))
+      end
+      redirect_to conversation_personal_messages_path(@conversation)
     end
 
     def new

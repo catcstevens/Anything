@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   resources :users
   resources :calendars
   
-  resources :personal_messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show]
+  
+  resources :conversations, only: [:index, :show, :create] do
+   resources :personal_messages, only: [:new, :create, :index]
+  end
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 # routes main page to home
 get "/", to: "pages#home", as: "root"

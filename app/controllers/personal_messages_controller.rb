@@ -17,6 +17,14 @@ class PersonalMessagesController < ApplicationController
         flash[:success] = "Your message was sent!"
         redirect_to conversation_path(@conversation)
       end
+
+      def index
+        @messages = @conversation.personal_messages
+        @receiver = User.find(@conversation.receiver_id)
+
+        @message = @conversation.personal_messages.new
+
+      end
   
     private
   
