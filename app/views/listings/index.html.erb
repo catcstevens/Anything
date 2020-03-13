@@ -32,7 +32,7 @@
                         <p>Minimum rental <%= listing.rental_period %></p>
                         <p>Daily fee: $<%= listing.price %></p>
                             <div>
-                                <%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user_id %>
+                            <button type="button" class="btn btn-outline-primary"><%= link_to "edit", edit_listing_path(listing.id) if current_user.id == listing.user_id %></button>
                             </div>
                          <button type="button" class="btn btn-outline-primary"><%= link_to "View #{listing.title}", listing_path(listing.id) %></button>
     

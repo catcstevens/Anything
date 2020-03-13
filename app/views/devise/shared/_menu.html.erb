@@ -1,3 +1,4 @@
+
 <% flash.each do |key, value| %>
     <div>
       <%= value %>
@@ -6,7 +7,8 @@
   
   <% if user_signed_in? %>
     <h2> Hello <%= current_user.name %> </h2>
-  <% end %>
+ 
 
   
   <button type="button" class="btn btn-outline-primary"><%= link_to 'Users', users_path %></button>
+  <% end %>

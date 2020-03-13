@@ -3,6 +3,8 @@ class PaymentsController < ApplicationController
 
     end
 
+    #webhook connects this app with Stripe
+    #This method passes important payment information
     def webhook
     payment_id= params[:data][:object][:payment_intent]
     payment = Stripe::PaymentIntent.retrieve(payment_id)

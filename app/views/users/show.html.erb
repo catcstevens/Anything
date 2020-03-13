@@ -1,6 +1,7 @@
 <h1>Neighbour</h1>
 
-<p>Name: <%= full_name %></p>
+<p>Name: <%= @user.first_name %></p>
+<p>Name: <%= @user.last_name %></p>
 <p>Name: <%= @user.username %></p>
 <p>About: <%= @user.about %></p>
 <p>Location: <%= @user.location %></p>
@@ -8,8 +9,10 @@
 
 <% @user_listings.each do |listing| %>
 <%= image_tag listing.picture if listing.picture.attached? %>
-<%= link_to listing.title, listings_path(listing) %>
+<button type="button" class="btn btn-outline-primary"><%= link_to listing.title, listings_path(listing) %>
+<% end %></button >
 
-<button type="button" class="btn btn-custom"><%= link_to "Edit profile", edit_user_registration_path %></button >
 
-    <% end %>
+<button type="button" class="btn btn-outline-primary"><%= link_to "Edit profile", edit_user_registration_path %></button >
+
+ 

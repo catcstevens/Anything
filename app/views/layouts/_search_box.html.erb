@@ -1,3 +1,4 @@
+
 <% if (!@search.blank?) %>
 <%= search_form_for @search do |f| %>
     <div class="field">
@@ -5,7 +6,7 @@
         <%= f.text_field :title_cont %>
     
     <div class="actions"><%= f.submit "Search" %></div>
-    </div>
+  
     <% end %>
 <% end %>
-
+</div>
